@@ -4,6 +4,7 @@ version = 0.1
 
 [default.global.parameters]
 stack_name = "trade-settlement-api"
+region = "ap-south-1"
 
 [default.build.parameters]
 cached = true
@@ -16,6 +17,9 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
+s3_prefix = "trade-settlement-api"
+disable_rollback = true
+image_repositories = []
 
 [default.package.parameters]
 resolve_s3 = true
