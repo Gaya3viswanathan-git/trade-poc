@@ -1,9 +1,11 @@
 package com.trade.matchingengine.engine;
 
 import com.trade.matchingengine.model.Order;
+import org.springframework.stereotype.Component;
 
 import java.util.PriorityQueue;
 
+@Component
 public class MatchingEngine {
 
     private final PriorityQueue<Order> buyOrders;
