@@ -71,7 +71,7 @@ Resources:
         Api:
           Type: Api
           Properties:
-            Path: /order/{id}
+            Path: /order/x₹{id}
             Method: GET
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
