@@ -1,6 +1,7 @@
 package com.trade.matchingengine.service;
 
 import com.trade.matchingengine.engine.MatchingEngine;
+import com.trade.matchingengine.model.MatchResult;
 import com.trade.matchingengine.model.Order;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +10,12 @@ public class MatchingService {
 
     private final MatchingEngine matchingEngine;
 
-    public MatchingService() {
-        this.matchingEngine = new MatchingEngine();
+    public MatchingService(MatchingEngine matchingEngine) {
+        this.matchingEngine = matchingEngine;
     }
 
-    public void processOrder(Order order) {
+    public MatchResult processOrder(Order order) {
 
-        matchingEngine.processOrder(order);
+        return matchingEngine.processOrder(order);
     }
 }

@@ -1,5 +1,6 @@
 package com.trade.matchingengine.controller;
 
+import com.trade.matchingengine.model.MatchResult;
 import com.trade.matchingengine.model.Order;
 import com.trade.matchingengine.service.MatchingService;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +16,10 @@ public class MatchingController {
     }
 
     @PostMapping
-    public String matchOrder(@RequestBody Order order) {
+    public MatchResult matchOrder(
+            @RequestBody Order order
+    ) {
 
-        matchingService.processOrder(order);
-
-        return "Order processed successfully";
+        return matchingService.processOrder(order);
     }
 }
