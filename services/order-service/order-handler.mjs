@@ -4,6 +4,8 @@ import {
     getOrderById
 } from "./order-service.mjs";
 
+import { sendOrderToMatchingEngine } from "./matching-client.mjs";
+
 const buildResponse = (statusCode, body) => {
     return {
         statusCode,
@@ -28,7 +30,12 @@ export const createOrderHandler = async (event) => {
 
         const result = await createOrder(body);
 
-        return buildResponse(201, result);
+        const matchingResult = await sendOrderToMatchingEngine(result.order);
+
+        return buildResponse(201, {
+            ...result,
+            matchingResult
+        });
 
     } catch (err) {
 

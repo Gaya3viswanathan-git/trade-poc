@@ -71,7 +71,7 @@ Resources:
         Api:
           Type: Api
           Properties:
-            Path: /order/x₹{id}
+            Path: /order/{id}
             Method: GET
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -96,6 +96,7 @@ Resources:
         Variables:
           # Make table name accessible as environment variable from function code during execution
           ORDER_TABLE: !Ref OrderTable
+          MATCHING_ENGINE_URL: http://43.204.229.255:8080
       Events:
         Api:
           Type: Api
