@@ -169,17 +169,6 @@ Implemented REST-based communication between serverless and containerized servic
 
 ---
 
-# Screenshots
-
-Recommended screenshots:
-- ECS running task
-- Successful Lambda API response
-- DynamoDB records
-- ECS deployment success
-- CloudWatch logs
-
----
-
 # Cleanup
 
 To avoid AWS billing after testing:
